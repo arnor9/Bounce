@@ -2,22 +2,29 @@ package vidmot.bouncing;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class BouncingApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
+        FXMLLoader fxmlloader = new FXMLLoader(BouncingApplication.class.getResource("bouncing-view.fxml"));
+        Parent root = fxmlloader.load();
+        BouncingController sc = fxmlloader.getController();
+        stage.setTitle("Bouncing ball");
+        Scene s = new Scene(root, 600, 600);
+        sc.orvatakkar();
+        stage.setScene(s);
         stage.show();
+        sc.stillaTimeline();
     }
+
 
     public static void main(String[] args) {
         launch();
     }
 }
+

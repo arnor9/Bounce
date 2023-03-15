@@ -1,2 +1,5 @@
-package vidmot.bouncing;public interface Leikhlutur {
+package vidmot.bouncing;
+
+public interface Leikhlutur {
+    void afram();
 }
